@@ -59,7 +59,7 @@
 
           <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput #email>
+            <input matInput #email placeholder="email@example.com">
           </mat-form-field>
           <mat-form-field>
             <mat-label>Username</mat-label>
@@ -90,17 +90,29 @@
             </mat-panel-description>
           </mat-expansion-panel-header>
 
-          <section>
-            <mat-label>Languages you know</mat-label>
-            <div>
-            <span><mat-checkbox>C</mat-checkbox></span>
-            <span><mat-checkbox>C++</mat-checkbox></span>
-            <mat-checkbox>C#</mat-checkbox>
-            <mat-checkbox>Python</mat-checkbox>
-            <mat-checkbox>Java</mat-checkbox>
-            <mat-checkbox>Javascript</mat-checkbox>
-            </div>
-          </section>
+          <div>
+            <mat-label>Languages you know:</mat-label>
+            <div><mat-checkbox #c>C</mat-checkbox></div>
+            <div><mat-checkbox #cShrp>C#</mat-checkbox></div>
+            <div><mat-checkbox #cpp>C++</mat-checkbox></div>
+            <div><mat-checkbox #py>Python</mat-checkbox></div>
+            <div><mat-checkbox #java>Java</mat-checkbox></div>
+          </div>
+          <p></p>
+          <div>
+            <mat-label>Experience you have:</mat-label>
+            <div><mat-radio-button #zero>0 years</mat-radio-button></div>
+            <div><mat-radio-button #zeroToTwo>0 - 2 years</mat-radio-button></div>
+            <div><mat-radio-button #twoToFour>2 - 4 years</mat-radio-button></div>
+            <div><mat-radio-button #fourPlus>4+ years</mat-radio-button></div>
+          </div>
+          <p></p>
+          <div>
+            <mat-label>Why Stack Underflow?</mat-label>
+            <div><mat-checkbox #class>For class</mat-checkbox></div>
+            <div><mat-checkbox #work>For work</mat-checkbox></div>
+            <div><mat-checkbox #other>Other</mat-checkbox></div>
+          </div>
       
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Previous</button>
