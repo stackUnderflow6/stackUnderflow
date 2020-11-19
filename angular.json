@@ -29,7 +29,8 @@
               "src/assets/images"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "unicorn-app-theme.scss"
             ],
             "scripts": []
           },
