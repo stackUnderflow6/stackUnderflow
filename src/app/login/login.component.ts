@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import {FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +12,22 @@ export class LoginComponent implements OnInit {
 
   username: string;
   password: string;
+  step = 0;
+  
 
   ngOnInit() {}
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
 
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
@@ -21,5 +35,9 @@ export class LoginComponent implements OnInit {
     }else {
       alert("Invalid credentials");
     }
+  }
+
+  submit() : void {
+    
   }
 }
