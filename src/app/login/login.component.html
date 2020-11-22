@@ -29,6 +29,7 @@
         </div>
       </mat-tab>
     <mat-tab label="Create an Account">
+      <form>
       <mat-accordion class="example-headers-align">
         <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
           <mat-expansion-panel-header>
@@ -85,33 +86,33 @@
             </mat-panel-title>
             <mat-panel-description>
               Tell us why you're here!
-              <mat-icon>text_snippet</mat-icon>
+              <mat-icon>date_range</mat-icon>
             </mat-panel-description>
           </mat-expansion-panel-header>
 
-          <div>
+          <mat-list>
             <mat-label>Languages you know:</mat-label>
-            <div><mat-checkbox #c>C</mat-checkbox></div>
-            <div><mat-checkbox #cShrp>C#</mat-checkbox></div>
-            <div><mat-checkbox #cpp>C++</mat-checkbox></div>
-            <div><mat-checkbox #py>Python</mat-checkbox></div>
-            <div><mat-checkbox #java>Java</mat-checkbox></div>
-          </div>
+            <mat-list-item><mat-checkbox #c>C</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #cShrp>C#</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #cpp>C++</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #py>Python</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #java>Java</mat-checkbox></mat-list-item>
+          </mat-list>
           <p></p>
-          <div>
+          <mat-list>
             <mat-label>Experience you have:</mat-label>
-            <div><mat-radio-button #zero>0 years</mat-radio-button></div>
-            <div><mat-radio-button #zeroToTwo>0 - 2 years</mat-radio-button></div>
-            <div><mat-radio-button #twoToFour>2 - 4 years</mat-radio-button></div>
-            <div><mat-radio-button #fourPlus>4+ years</mat-radio-button></div>
-          </div>
+            <mat-list-item><mat-radio-button #zero>0 years</mat-radio-button></mat-list-item>
+            <mat-list-item><mat-radio-button #zeroToTwo>0 - 2 years</mat-radio-button></mat-list-item>
+            <mat-list-item><mat-radio-button #twoToFour>2 - 4 years</mat-radio-button></mat-list-item>
+            <mat-list-item><mat-radio-button #fourPlus>4+ years</mat-radio-button></mat-list-item>
+          </mat-list>
           <p></p>
-          <div>
+          <mat-list>
             <mat-label>Why Stack Underflow?</mat-label>
-            <div><mat-checkbox #class>For class</mat-checkbox></div>
-            <div><mat-checkbox #work>For work</mat-checkbox></div>
-            <div><mat-checkbox #other>Other</mat-checkbox></div>
-          </div>
+            <mat-list-item><mat-checkbox #class>For class</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #work>For work</mat-checkbox></mat-list-item>
+            <mat-list-item><mat-checkbox #other>Other</mat-checkbox></mat-list-item>
+          </mat-list>
       
           <mat-action-row>
             <button mat-button color="warn" (click)="prevStep()">Previous</button>
@@ -119,6 +120,7 @@
           </mat-action-row>
         </mat-expansion-panel>
       </mat-accordion>
+    </form>
     </mat-tab>
   </mat-tab-group>
 </mat-card>

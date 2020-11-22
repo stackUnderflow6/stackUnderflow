@@ -1,0 +1,153 @@
+<mat-card class="box">
+    <mat-tab-group>
+        <mat-tab label="Profile">
+            <form>
+            <mat-list>
+                <mat-list-item>
+                    <mat-form-field>
+                    <mat-label>First Name </mat-label>
+                    <input matInput [disabled]="hidden" #first value="{{firstName}}">
+                </mat-form-field>
+                </mat-list-item>
+              <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Last Name</mat-label>
+                        <input matInput [disabled]="hidden" #last value="{{lastName}}">
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+              <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                    <mat-label>Username </mat-label>
+                    <input matInput #user [disabled]="hidden" value="{{username}}">
+                </mat-form-field>
+                </mat-list-item>
+             <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Password</mat-label>
+                        <input matInput #pass [disabled]="hidden" [type]="hidePass ? 'password' : 'text'" value="{{password}}"/>
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [disabled]="hidden" [matDatepicker]="picker" [value]="DOB.value">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Email Address</mat-label>
+                        <input matInput #mail [disabled]="hidden" value="{{email}}">
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-button-toggle (click)="edit(first.value, last.value, user.value, pass.value, picker.value, mail.value)">Edit</mat-button-toggle>
+            </mat-list>
+            </form>
+        </mat-tab>
+        <mat-tab label="Preferences">
+            <mat-list *ngIf="hidden">
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Languages you know</mat-label>
+                        <input matInput disabled value="{{languages}}">
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Experience you have</mat-label>
+                        <input matInput disabled value="{{experience}}">
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-form-field>
+                        <mat-label>Reason for Stack Underflow</mat-label>
+                        <input matInput disabled value="{{reason}}">
+                    </mat-form-field>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-button-toggle (click)="editSurvey()">Edit</mat-button-toggle>
+            </mat-list>
+            <form>
+            <mat-list *ngIf="!hidden">
+                <mat-list-item>
+                    <mat-label>Languages you know: </mat-label>
+                    <mat-list>
+                        <input style="margin-left:10px" type="checkbox" value="C" #c>
+                        <mat-label for="c">C</mat-label>
+                        <input style="margin-left:10px" type="checkbox" #cShrp value="C#">
+                        <mat-label for="cShrp">C#</mat-label>
+                        <input style="margin-left:10px" type="checkbox" #cpp value="C++">
+                        <mat-label for="cpp">C++</mat-label>
+                        <input style="margin-left:10px" type="checkbox" #py value="Python">
+                        <mat-label for="py">Python</mat-label>
+                        <input style="margin-left:10px" type="checkbox" #java value="Java">
+                        <mat-label for="java">Java</mat-label>
+                    </mat-list>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-label>Experience you have: </mat-label>
+                    <mat-list>
+                        <input name="experience" style="margin-left:10px" type="radio" #zero value="0 years">
+                        <mat-label for="zero">0 years</mat-label>
+                        <input name="experience" style="margin-left:10px" type="radio" #zeroToTwo value="0 - 2 years">
+                        <mat-label for="zeroToTwo">0 - 2 years</mat-label>
+                        <input name="experience" style="margin-left:10px" type="radio" #twoToFour value="2 - 4 years"> 
+                        <mat-label for="twoToFour">2 - 4 years</mat-label>                    
+                        <input name="experience" style="margin-left:10px" type="radio" #fourPlus value="4+ years">
+                        <mat-label for="fourPlus">4+ years</mat-label>
+                    </mat-list>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-list-item>
+                    <mat-label>Why Stack Underflow?</mat-label>
+                    <mat-list>
+                        <input style="margin-left:10px" type="checkbox" value="For Class" #forClass>
+                        <mat-label for="forClass">For Class</mat-label>
+                        <input style="margin-left:10px" type="checkbox" value="For Work" #work>
+                        <mat-label for="work">For Work</mat-label>
+                        <input style="margin-left:10px" type="checkbox" value="Other" #other>
+                        <mat-label for="other">Other</mat-label>
+                    </mat-list>
+                </mat-list-item>
+                <p></p>
+                <mat-divider></mat-divider>
+                <p></p>
+                <mat-button-toggle (click)="editSurvey(c.value, cShrp.value, cpp.value, py.value, java.value, 
+                zero.value, zeroToTwo.value, twoToFour.value, fourPlus.value, forClass.value, work.value, other.value)">Edit</mat-button-toggle>
+            </mat-list>
+        </form>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

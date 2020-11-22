@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {FormControl, Validators} from '@angular/forms';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,8 +11,15 @@ import {FormControl, Validators} from '@angular/forms';
 export class LoginComponent implements OnInit {
   constructor(private router: Router) { }
 
-  username: string;
-  password: string;
+  firstName: string = "Jessica";
+  lastName: string = "Minton";
+  DOB = new FormControl(new Date());
+  email: string = "jminton2017@fau.edu";
+  username: string = "admin";
+  password: string = "admin";
+  languages: string = "C++, Java, Python";
+  experience: string = "2 - 4 years";
+  reason: string = "For Class";
   step = 0;
   
 
@@ -31,7 +39,7 @@ export class LoginComponent implements OnInit {
 
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
-     this.router.navigate(["home"]);
+     window.location.href = 'https://renukaseepersad.github.io/Temp_stackUnderflow/index.html';
     }else {
       alert("Invalid credentials");
     }

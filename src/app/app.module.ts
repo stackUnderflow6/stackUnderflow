@@ -7,12 +7,14 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
