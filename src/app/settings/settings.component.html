@@ -5,15 +5,16 @@
     <h1>{{title}}</h1>
   </div>
 
+<div class="row">
+    <div class="column">
 <mat-card>
-    <mat-tab-group>
-        <mat-tab label="Profile">
+        <mat-card-title>Profile</mat-card-title>
             <form>
             <mat-list>
                 <mat-list-item>
                     <mat-form-field>
                     <mat-label>First Name </mat-label>
-                    <input matInput [disabled]="hidden" #first value="{{firstName}}">
+                    <input matInput [disabled]="hiddenProf" #first value="{{firstName}}">
                 </mat-form-field>
                 </mat-list-item>
               <p></p>
@@ -22,7 +23,7 @@
                 <mat-list-item>
                     <mat-form-field>
                         <mat-label>Last Name</mat-label>
-                        <input matInput [disabled]="hidden" #last value="{{lastName}}">
+                        <input matInput [disabled]="hiddenProf" #last value="{{lastName}}">
                     </mat-form-field>
                 </mat-list-item>
                 <p></p>
@@ -31,7 +32,7 @@
                 <mat-list-item>
                     <mat-form-field>
                     <mat-label>Username </mat-label>
-                    <input matInput #user [disabled]="hidden" value="{{username}}">
+                    <input matInput #user [disabled]="hiddenProf" value="{{username}}">
                 </mat-form-field>
                 </mat-list-item>
              <p></p>
@@ -40,7 +41,7 @@
                 <mat-list-item>
                     <mat-form-field>
                         <mat-label>Password</mat-label>
-                        <input matInput #pass [disabled]="hidden" [type]="hidePass ? 'password' : 'text'" value="{{password}}"/>
+                        <input matInput #pass [disabled]="hiddenProf" [type]="hidePass ? 'password' : 'text'" value="{{password}}"/>
                     </mat-form-field>
                 </mat-list-item>
                 <p></p>
@@ -49,7 +50,7 @@
                 <mat-list-item>
                     <mat-form-field>
                         <mat-label>Date of Birth</mat-label>
-                        <input matInput [disabled]="hidden" [matDatepicker]="picker" [value]="DOB.value">
+                        <input matInput [disabled]="hiddenProf" [matDatepicker]="picker" [value]="DOB.value">
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
@@ -60,18 +61,21 @@
                 <mat-list-item>
                     <mat-form-field>
                         <mat-label>Email Address</mat-label>
-                        <input matInput #mail [disabled]="hidden" value="{{email}}">
+                        <input matInput #mail [disabled]="hiddenProf" value="{{email}}">
                     </mat-form-field>
                 </mat-list-item>
                 <p></p>
                 <mat-divider></mat-divider>
                 <p></p>
-                <mat-button-toggle *ngIf="hidden" (click)="edit(first.value, last.value, user.value, pass.value, picker.value, mail.value)"><mat-icon>lock</mat-icon></mat-button-toggle>
-                <mat-button-toggle *ngIf="!hidden" (click)="edit(first.value, last.value, user.value, pass.value, picker.value, mail.value)"><mat-icon>lock_open</mat-icon></mat-button-toggle>
+                <mat-button-toggle *ngIf="hiddenProf" (click)="edit(first.value, last.value, user.value, pass.value, picker.value, mail.value)"><mat-icon>lock</mat-icon></mat-button-toggle>
+                <mat-button-toggle *ngIf="!hiddenProf" (click)="edit(first.value, last.value, user.value, pass.value, picker.value, mail.value)"><mat-icon>lock_open</mat-icon></mat-button-toggle>
             </mat-list>
             </form>
-        </mat-tab>
-        <mat-tab label="Preferences">
+</mat-card>
+</div>
+<div class="column">
+<mat-card>
+        <mat-card-title>Preferences</mat-card-title>
             <mat-list *ngIf="hidden">
                 <mat-list-item>
                     <mat-form-field>
@@ -158,6 +162,6 @@
                 forClass.value, work.checked, work.value, other.checked, other.value)"><mat-icon>lock_open</mat-icon></mat-button-toggle>
             </mat-list>
         </form>
-        </mat-tab>
-    </mat-tab-group>
 </mat-card>
+</div>
+</div>

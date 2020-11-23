@@ -1,5 +1,4 @@
 .example-container {
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -7,6 +6,17 @@
     background: #eee;
   }
 
+  .column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 
 .mat-form-field {
     margin-top: 40px;

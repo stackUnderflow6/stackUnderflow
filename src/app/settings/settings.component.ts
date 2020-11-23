@@ -14,6 +14,7 @@ export class SettingsComponent implements OnInit {
   }
   hidePass = true;
   hidden: boolean = true;
+  hiddenProf: boolean = true;
   firstName = this.loginComponent.firstName;
   lastName = this.loginComponent.lastName;
   DOB = this.loginComponent.DOB;
@@ -71,17 +72,17 @@ export class SettingsComponent implements OnInit {
 
 
   edit(first: string, last: string, user: string, pass: string, picker: Date, mail: string) {
-    if (this.hidden === false) {
+    if (this.hiddenProf === false) {
       this.firstName = first;
       this.lastName = last;
       this.username = user;
       this.password = pass;
       this.email = mail;
       this.hidePass = true;
-      this.hidden = true;
+      this.hiddenProf = true;
     } else {
       this.hidePass = false;
-      this.hidden = false;
+      this.hiddenProf = false;
     }
   }
 
