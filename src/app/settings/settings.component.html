@@ -1,4 +1,11 @@
-<mat-card class="box">
+<button class="homeButton" mat-raised-button (click)="home()"><mat-icon>home</mat-icon></button>
+
+<div class="box" style="width:450px">
+    <img class="image" src="assets/images/pic1.png"/>
+    <h1>{{title}}</h1>
+  </div>
+
+<mat-card>
     <mat-tab-group>
         <mat-tab label="Profile">
             <form>

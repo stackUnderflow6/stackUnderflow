@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   experience: string = "2 - 4 years";
   reason: string = "For Class";
   step = 0;
+  title = 'Stack Underflow';
   
 
   ngOnInit() {}
