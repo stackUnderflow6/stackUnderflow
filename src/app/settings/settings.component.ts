@@ -23,11 +23,43 @@ export class SettingsComponent implements OnInit {
   languages = this.loginComponent.languages;
   experience = this.loginComponent.experience;
   reason = this.loginComponent.reason;
+ 
 
-  editSurvey(c: string, cShrp: string, cpp: string, py: string, java: string, 
-    zero: string, zeroToTwo: string, twoToFour: string, fourPlus: string, forClass: string, work: string, other: string) {
+  editSurvey(cChecked: boolean, c: string, cShrpChecked: boolean, cShrp: string, cppChecked: boolean, 
+    cpp: string, pyChecked: boolean, py: string, javaChecked: boolean, java: string, zeroSelected: boolean, 
+    zero: string, zeroToTwoSelected: boolean, zeroToTwo: string, twoToFourSelected: boolean, twoToFour: string, 
+    fourPlusSelected: boolean, fourPlus: string, forClassChecked: boolean, forClass: string, workChecked: boolean, 
+    work: string, otherChecked: boolean, other: string) {
     if(this.hidden === false) {
-      console.log(c);
+      this.languages = '';
+      this.experience = '';
+      this.reason = '';
+      if (cChecked === true) 
+        this.languages += c + ", ";
+      if (cShrpChecked === true)
+        this.languages += cShrp + ", ";
+      if (cppChecked === true)
+        this.languages += cpp + ", ";
+      if (pyChecked === true)
+        this.languages += py + ", ";
+      if (javaChecked === true)
+        this.languages += java;
+      
+      if (zeroSelected === true)
+        this.experience = zero;
+      if (zeroToTwoSelected === true)
+        this.experience = zeroToTwo;
+      if (twoToFourSelected === true)
+        this.experience = twoToFour;
+      if (fourPlusSelected === true)
+        this.experience = fourPlus;
+      
+      if(forClassChecked === true)
+        this.reason += forClass + ", ";
+      if (workChecked === true)
+        this.reason += work + ", ";
+      if (otherChecked === true)
+        this.reason += other;
       this.hidden = true;
     } else
       this.hidden = false;
