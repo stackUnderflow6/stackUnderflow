@@ -25,10 +25,6 @@ export class SettingsComponent implements OnInit {
   experience = this.loginComponent.experience;
   reason = this.loginComponent.reason;
   title = 'Settings';
- 
-  home() {
-    window.location.href = 'https://renukaseepersad.github.io/Temp_stackUnderflow/index.html';
-  }
 
   editSurvey(cChecked: boolean, c: string, cShrpChecked: boolean, cShrp: string, cppChecked: boolean, 
     cpp: string, pyChecked: boolean, py: string, javaChecked: boolean, java: string, zeroSelected: boolean, 

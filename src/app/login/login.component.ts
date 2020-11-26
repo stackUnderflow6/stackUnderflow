@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
   login() : void {
     if(this.username == 'admin' && this.password == 'admin'){
-     window.location.href = 'https://renukaseepersad.github.io/Temp_stackUnderflow/index.html';
+     this.router.navigate(['/home']);
     }else {
       alert("Invalid credentials");
     }

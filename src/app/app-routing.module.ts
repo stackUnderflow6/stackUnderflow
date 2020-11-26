@@ -9,7 +9,7 @@ import { SurveyComponent } from './survey/survey.component';
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo:'/login', pathMatch: 'full'},
-  {path: 'home', redirectTo: 'https://renukaseepersad.github.io/Temp_stackUnderflow/index.html'},
+  {path: 'home', component: HomePageComponent},
   {path: 'settings', component: SettingsComponent},
   {path: 'survey', component: SurveyComponent}
 ];
